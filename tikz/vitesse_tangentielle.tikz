@@ -1,0 +1,23 @@
+      \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+            \tkzDefPoint(0,0){O}
+            \tkzDefPoint(2.5,0){A}
+            \tkzDefPointBy[rotation=center O angle 50](A)
+            \tkzGetPoint{B}
+
+            \tkzFillAngle[size=1cm,left color=white,right color=YellowOrange](A,O,B)
+            \tkzMarkAngle[size = 1cm,color=Orange,mark=none,line width=1pt](A,O,B)
+
+
+            \tkzDrawSegment[line width=2pt,color=red](O,A)
+            \tkzDrawSegment[line width=2pt,color=OliveGreen](O,B)
+            \tkzDrawCircle[line width=2pt,color=blue](O,A)
+            \tkzDefTangent[at=B](O)
+            \tkzGetPoint{H}
+            %\tkzDrawSegments[vect](B,H)
+            \tkzDrawLine[->,line width=1.5pt,color=BrickRed,add=0 and 2](B,H)
+
+            \tkzLabelPoint[right=2pt,color=OliveGreen](B){$B$}
+            \tkzLabelSegment[auto,color=OliveGreen](O,B){$r$}
+            \tkzMarkRightAngle[size=.3,fill=lightgray,opacity=.5](O,B,H)
+            \tkzLabelSegment[above,color=BrickRed](B,H){$\vec{v}$}
+      \end{tikzpicture}

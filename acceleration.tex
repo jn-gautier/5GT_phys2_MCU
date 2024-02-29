@@ -1,0 +1,217 @@
+\chapter{Accélération}
+Dans un MCU, la valeur de la vitesse est constante, mais sa direction varie. Cette vitesse n'est donc pas constante et cela implique qu'il existe une accélération !
+En physique, l'accélération est toujours définie comme la différence de vitesse entre deux instants, divisée par le temps qui sépare ces deux instants :
+\begin{equation*}
+    \vec{a}=\frac{\vec{v_1}-\vec{v_0}}{\Delta t}
+\end{equation*}
+
+L'accélération du MCU n'échappe pas à cette règle.
+Toutefois, pour que l'accélération ainsi calculée soit une accélération instantanée et non une accélération moyenne, il faut que l'intervalle de temps entre \(t_1\) et \(t_0\) soit le plus proche possible de 0 (zéro).
+
+\section{Sens et direction du vecteur accélération}
+L'animation sur le calcul de l'accélération présentée en classe a mis en évidence que lorsque l'intervalle de temps est court, le vecteur accélération est dirigé radialement et vers le centre du cercle.
+
+\begin{encadre}
+    Dans un MCU, l'accélération est :
+    \begin{itemize}[label=\textbullet]
+        \item radiale : de même direction que les rayons du cercle ;
+        \item \motcle{centripète} : elle est toujours dirigée vers le centre du cercle.
+    \end{itemize}
+\end{encadre}
+
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqzzqq}{rgb}{0,0.6,0}
+\definecolor{ffxfqq}{rgb}{1,0.4980392156862745,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+    \clip(-6,-6) rectangle (6,6);
+    \draw [line width=2pt,color=qqqqff] (0,0) circle (5cm);
+    \draw [line width=2pt,color=ffxfqq] (0,0)-- (4.235128716917126,2.6577593478612576);
+    \draw [line width=2pt,color=ffxfqq] (0,0)-- (0.8944271909999164,4.919349550499537);
+    \draw [->,line width=2pt,color=qqzzqq] (0.8944271909999164,4.919349550499537) -- (-3.0410524493997135,5.6348913032994705);
+    \draw [->,line width=2pt,color=qqzzqq] (4.235128716917126,2.6577593478612576) -- (2.1089212386281204,6.045862321394958);
+    \draw [->,line width=2pt,color=ffqqqq] (2.5647779539585214,3.7885544491803973) -- (0.7555057918478971,1.11599322844663);
+    \begin{scriptsize}
+        \draw [fill=uuuuuu] (0,0) circle (2pt);
+        \draw[color=ffxfqq] (2.88,1.27) node {$r$};
+        \draw[color=ffxfqq] (0.92,2.55) node {$r$};
+        \draw[color=qqzzqq] (-0.32,5.75) node {\(\vec{v_{t2}}\)};
+        \draw[color=qqzzqq] (4.04,4.71) node {\(\vec{v_{t1}}\)};
+        \draw[color=ffqqqq] (2.82,2.75) node {\(\vec{a_c}\)};
+    \end{scriptsize}
+\end{tikzpicture}
+
+\newpage
+
+\section{Intensité de l'accélération}
+Dans un MCU, l'accélération centripète vaut :
+\begin{equation}
+    a=\frac{\Delta v}{\Delta t}
+\end{equation}
+
+\definecolor{wwffqq}{rgb}{0.4,1,0}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{ttffqq}{rgb}{0.2,1,0}
+\definecolor{ffxfqq}{rgb}{1,0.4980392156862745,0}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqzzqq}{rgb}{0,0.6,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+    %\clip(-7.7,-5.4) rectangle (14.94,13.96);
+    \fill[line width=0pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (4.629422378491702,7.950168030534125) -- (3.1449065223887356,10.557122704666163) -- (1.6667963555911083,8.422234814402902) -- cycle;
+    \fill[line width=0pt,color=wwffqq,fill=wwffqq,fill opacity=0.1] (4,4) -- (4.629422378491702,7.950168030534125) -- (7.475939565509384,5.979354474803954) -- cycle;
+    \draw [line width=2pt,color=qqqqff] (4,4) circle (4cm);
+    \draw [line width=2pt,color=qqzzqq] (4,4)-- (7.475939565509384,5.979354474803954);
+    \draw [line width=2pt,color=qqzzqq] (4,4)-- (4.629422378491702,7.950168030534125);
+    \draw [->,line width=2pt,color=ffqqqq] (7.475939565509384,5.979354474803954) -- (5.991423709406417,8.586309148935992);
+    \draw [->,line width=2pt,color=ffqqqq] (4.629422378491702,7.950168030534125) -- (1.6667963555911083,8.422234814402902);
+    \draw [->,line width=2pt,dash pattern=on 1pt off 1pt,color=ffqqqq] (4.629422378491702,7.950168030534125) -- (3.1449065223887356,10.557122704666163);
+    \draw [->,line width=2pt,color=ffxfqq] (3.1449065223887356,10.557122704666163) -- (1.6667963555911083,8.422234814402902);
+    \draw [line width=2pt,color=ttffqq] (7.475939565509384,5.979354474803954)-- (4.629422378491702,7.950168030534125);
+    \begin{scriptsize}
+        \draw [fill=black] (4,4) circle (2.5pt);
+        \draw[color=black] (4.38,3.91) node {C};
+        \draw [fill=black] (7.475939565509384,5.979354474803954) circle (2.5pt);
+        \draw[color=black] (7.84,6.17) node {\(x_1\)};
+        \draw [fill=black] (4.629422378491702,7.950168030534125) circle (2.5pt);
+        \draw[color=black] (5.02,8.25) node {\(x_2\)};
+        \draw[color=qqzzqq] (5.96,4.95) node {r};
+        \draw[color=qqzzqq] (4.7,6.17) node {r};
+        \draw[color=ffqqqq] (7.34,7.55) node {\(\vec{v_1}\)};
+        \draw[color=ffqqqq] (2.76,8.5) node {\(\vec{v_2}\)};
+        \draw[color=ffqqqq] (4,9.51) node {\(\vec{v_1}\)};
+        \draw[color=ffxfqq] (1.5,10) node {\(\vec{\Delta v} = \vec{v_2} - \vec{v_1}\)};
+    \end{scriptsize}
+\end{tikzpicture}
+
+Or, le triangle formé par les vecteurs \(\vec{v_1} ~ ; ~ \vec{v_2} ~ et ~ \vec{\Delta v}\) (en rouge) et le triangle formé par les deux rayons \(r\) (en vert) sont des triangles semblables.
+On a donc le droit d'écrire que :
+\begin{equation}
+    \frac{\Delta v}{b} = \frac{v}{r}
+    \label{eqn:triangles_semblables}
+\end{equation}
+Où \(b\) est le segment reliant les points \(x_1\) et \(x_2\).
+
+\newpage
+
+Lorsque l'intervalle de temps, \(\Delta t\), qui sépare les points \(x_1\) et \(x_2\) devient très petit, l'arc de cercle entre \(x_1\) et \(x_2\) (\(l\)) à la même valeur que le segment de droite entre \(x_1\) et \(x_2\), ()\(b\)).
+
+Or, la valeur, \(l\),de l'arc de cercle est connue, elle vaut :
+\begin{equation}
+    l=v \cdot \Delta t
+    \label{eqn:longueur_arc}
+\end{equation}
+
+En associant les équations \ref{eqn:triangles_semblables} et \ref{eqn:longueur_arc}, on a alors le droit d'écrire que :
+\begin{equation}
+    \frac{\Delta v}{v \cdot \Delta t} = \frac{v}{r}
+\end{equation}
+
+On peur réarranger cette équation pour obtenir :
+\begin{equation}
+    \frac{\Delta v}{\Delta t}=\frac{v^2}{r}
+\end{equation}
+
+Et comme \(a_c=\frac{\Delta v}{\Delta t}\) :
+\begin{equation}
+    a_c=\frac{v^2}{r}
+\end{equation}
+
+\begin{mytheo*}{Accélération centripète}
+    \begin{equation}
+        a_c=\frac{v^2}{r}
+    \end{equation}
+\end{mytheo*}
+
+\begin{itemize}[label=\(\rightarrow\)]
+    \item Quelle relation mathématique permet de calculer l'accélération centripète à partir de la vitesse angulaire ?
+          \pointilles{2}
+\end{itemize}
+
+\newpage
+
+\section{Exercices}
+\begin{exercise}
+    Une personne fait tourner une fronde avec une fréquence de \(5[Hz]\). La longueur du fil est de \(70[cm]\) et la masse en mouvement est de \(100[g]\).
+    \begin{enumerate}[label=\alph*]
+        \item Quelle est la valeur de l'accélération centripète.
+        \item Quelle est l'intensité de la force avec laquelle il faut tirer sur le fil.
+        \item Lorsque l'objet en mouvement est libéré de la fronde, dans quelle direction part-il ? Fait un schéma \enquote{vu de haut}.
+    \end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}[label=\alph*]
+        \item \(a_c=70 \pi^2[m \cdot s^{-2}]\)
+        \item \(F_c=7 \cdot \pi^2[N] \)
+        \item Il se déplace en suivant un MRU
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Une force centripète constante de 3[N] s'exerce sur un objet de 5[kg] se déplaçant à la vitesse de 12[m/s].
+    \begin{enumerate}[label=\alph*]
+        \item Comment l'objet va-t-il se comporter ?
+        \item Quel sera le rayon de sa trajectoire ?
+        \item Combien de temps faudra-t-il pour faire un tour complet ?
+    \end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}[label=\alph*]
+        \item Il va commencer à tourner et son mouvement sera celui d'un MCU.
+        \item \(r=240[m] \)
+        \item \(T=40 \pi[s]\)
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Une voiture de \(300[kg]\) roule à la vitesse de \(14,4[km/h]\) autour d'un rond-point dont le rayon vaut \(5[m]\).
+    \begin{enumerate}[a)]
+        \item Quelle est la nature de la force qui induit l'accélération centripète ?
+        \item Que vaut l'accélération centripète ?
+    \end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}[label=\alph*]
+        \item Il s'agit des forces de frottement entre les pneus et la route .
+        \item \(a_c=3,2[m \cdot s^{-2}] \)
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Avec quelle force faut-il tirer sur un objet de 10[kg] se déplaçant à la vitesse de 54[km/h] pour qu'il fasse un tour complet en 30[s]. Quelle sera la longueur de la trajectoire ?
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}[label=\alph*]
+        \item \(F_c=10 \pi[N]\)
+        \item \(l=450[m] \)
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{exercise}
+    Quelle est l'accélération centripète d'un mobile décrivant un cercle de rayon \(r=60[cm]\) à vitesse constante et à une fréquence de \(f=0.86826[Hz]\) ?
+\end{exercise}
+\begin{solution}
+    \(a_c=17,857[m/s^2]\)
+\end{solution}
+\begin{exercise}
+    Quelle est la vitesse angulaire d'un mobile se déplaçant selon un MCU dont le rayon vaut \(r=70[cm]\) et l'accélération centripète \(a=12.5[m \cdot s^{-2}]\)?
+\end{exercise}
+\begin{solution}
+    \(\omega=4,2258 [rad/s]\)
+\end{solution}
+\begin{exercise}
+    Quelle est la vitesse tangentielle d'un mobile en MCU s'il prend \(1.4735[s]\) pour accomplir un tour dont le rayon vaut \(r=110[cm]\)?
+\end{exercise}
+\begin{solution}
+    \(v=4,6904 [m/s]\)
+\end{solution}
+\begin{exercise}
+    À quelle fréquence tourne un mobile de \(420[g]\) attaché au bout d'une corde de \(70[cm]\) de long si la force qui tire sur le fil est de \(F=6[N]\)?
+\end{exercise}
+\begin{solution}
+    \(f=0.71899[Hz]\)
+\end{solution}
+

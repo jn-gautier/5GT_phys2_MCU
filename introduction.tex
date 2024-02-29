@@ -1,0 +1,169 @@
+\chapter{Introduction}
+Jusqu'à présent, deux types de mouvements ont été abordés dans le cadre du cours de physique :
+\begin{itemize}
+      \item le MRU et le repos qui sont équivalents,
+      \item le MRUA.
+\end{itemize}
+
+Il existe bien d'autres types de mouvements et ce chapitre sera consacré au \textbf{mouvement circulaire uniforme}.
+
+\begin{encadre}
+      Un corps décrit un mouvement circulaire uniforme si :
+      \begin{itemize}
+            \item sa trajectoire est circulaire,
+            \item l'intensité de sa vitesse est constante.
+      \end{itemize}
+\end{encadre}
+
+\begin{figure}[h!]
+      \centering
+
+      \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+            \tkzDefPoint(0,0){O}
+            \tkzDefPoint(2.5,0){A}
+            \tkzDefPointBy[rotation=center O angle 50](A)
+            \tkzGetPoint{B}
+
+            \tkzFillAngle[size=1cm,left color=white,right color=YellowOrange](A,O,B)
+            \tkzMarkAngle[size = 1cm,color=Orange,mark=none,line width=1pt](A,O,B)
+
+
+            \tkzDrawSegment[line width=2pt,color=red](O,A)
+            \tkzDrawSegment[line width=2pt,color=OliveGreen](O,B)
+            \tkzDrawCircle[line width=2pt,color=blue](O,A)
+
+            \tkzLabelPoint[right=2pt,color=OliveGreen](B){$B$}
+            \tkzLabelSegment[auto,color=OliveGreen](O,B){$r$}
+      \end{tikzpicture}
+      \caption{Si le disque tourne à vitesse constante, le point \(B\) effectue un MCU}
+\end{figure}
+
+\newpage
+
+\section{Période et fréquence}
+Un exemple basique de MCU est donné par l'observation d'un point situé au bord d'un disque en rotation.
+Le temps pris pour faire un tour complet est appelé \motcle{période}.
+\begin{encadre}
+      \motcle{Période} : \(T [s]\)
+\end{encadre}
+
+
+
+\begin{itemize}[label=\(\rightarrow\)]
+      \item Un objet décrit un MCU dont la période vaut \(T=5[s]\). Combien de tour fait-il en \(1[s]\) ?
+            \pointilles{2}
+\end{itemize}
+Le nombre de tours parcourus en \(1[s]\) pour un corps en rotation est appelé \motcle{fréquence}.
+\begin{encadre}
+      \motcle{Fréquence} : \(f [\frac{1}{s}] ; [s^{-1}] ; [Hz]\)
+\end{encadre}
+
+\begin{itemize}[label=\(\rightarrow\)]
+      \item Quelle relation mathématique permet de calculer la période à partir de la fréquence ?
+            \pointilles{2}
+\end{itemize}
+
+\newpage
+
+\section{Vitesse tangentielle}
+La vitesse moyenne entre deux points a été définie comme :
+\(v_{moy}=\frac{\Delta x}{\Delta t}\)
+On observe que lorsque l'intervalle de temps entre \(x_1\) et \(x_2\) est très court, le vecteur vitesse devient tangent à la trajectoire, c'est-à-dire perpendiculaire au rayon.
+
+
+\begin{figure}[h!]
+      \centering
+      \input{./tikz/vitesse_tangentielle.tikz}
+      \caption{Le vecteur vitesse est tangent à la trajectoire.}
+      \label{vitesse_tangentielle}
+\end{figure}
+
+\subsection{Intensité de la vitesse}
+La circonférence d'un cercle étant égale à \(c=2 \cdot \pi \cdot r\), la valeur de la vitesse tangentielle dans un MCU est donnée par :
+\begin{mytheo*}{Vitesse tangentielle}
+      \begin{equation}
+            v=\frac{2 \cdot \pi \cdot r}{T}
+      \end{equation}
+\end{mytheo*}
+
+
+\newpage
+
+\section{Exercices}
+\begin{exercise}
+      La distance entre la Terre et la Lune est de 384 000[km] et elle prend 27,32 jours pour faire un tour complet. Si on considère que le mouvement de la Lune est un MCU, calcule la vitesse de la Lune.
+\end{exercise}
+\begin{solution}
+      \(v=1022[m/s]\)
+\end{solution}
+
+\begin{exercise}
+      Une roue dont le rayon vaut 30 cm tourne avec une fréquence de 50[Hz]. Quelle est la vitesse d'un caillou situé sur le bord de celle-ci ?
+      Si le caillou se décroche, par où va-t-il partir, fais un schéma.
+\end{exercise}
+\begin{solution}
+      \(v=94,25[m/s]\)
+\end{solution}
+
+\begin{exercise}
+      Une voiture s'engage sur un rond-point à la vitesse de 20[km/h]. Elle prend 3[s] pour franchir la première moité de celui-ci. Quelle est la longueur du rayon du rond-point ?
+\end{exercise}
+\begin{solution}
+      \(r=5,3052[m]\)
+\end{solution}
+
+\newpage
+
+\section{Vitesse angulaire}
+Lorsqu'un mobile est en MCU, il peut être plus intéressant de donner sa vitesse en fonction de l'angle parcouru à chaque seconde. On parle alors de \motcle{vitesse angulaire}. Cet angle est généralement donné en radian.
+\begin{encadre}
+      \motcle{Vitesse angulaire} : \(\omega [rad \cdot s^{-1}]\)
+\end{encadre}
+
+\begin{itemize}[label=\(\rightarrow\)]
+      \item Si un mobile possède une vitesse angulaire de \(\omega [rad \cdot s^{-1}]\), quel est l'angle balayé après une durée égale à \(T[s]\) ?
+            \pointilles{2}
+      \item Isole la période dans cette expression
+            \pointilles{2}
+      \item Isole la période dans l'équation de la vitesse tangentielle.
+            \pointilles{2}
+      \item Trouve l'expression permettant de calculer la vitesse angulaire à partir de la vitesse tangentielle.
+            \pointilles{2}
+\end{itemize}
+
+\newpage
+
+\section{Exercices}
+\begin{exercise}
+      Un mobile décrit un MCU avec un rayon de 5[m] en 20[s]. Quelle est sa vitesse angulaire ?
+\end{exercise}
+\begin{solution}
+      \(\omega=0,3142[rad/s]\)
+\end{solution}
+
+\begin{exercise}
+      Quelle est la fréquence d'un mobile dont la vitesse angulaire vaut 7[rad/s] ?
+\end{exercise}
+\begin{solution}
+      \(f=1,114[Hz]\)
+\end{solution}
+
+\begin{exercise}
+      La période de rotation d'un mobile est de 15[s]. Que vaut sa vitesse angulaire ? Si le rayon est de 20[m], que vaut la vitesse tangentielle ?
+\end{exercise}
+\begin{solution}
+      \begin{itemize}
+            \item \(\omega=0,4189[rad/s]\)
+            \item  \(v=8,3778[m/s]\)
+      \end{itemize}
+\end{solution}
+
+\begin{exercise}
+      La vitesse tangentielle d'un mobile est de 36[km/h], si le rayon est de 75[m], que valent la fréquence et la vitesse angulaire ?
+\end{exercise}
+\begin{solution}
+      \begin{itemize}
+            \item \(\omega=0,13333[rad/s]\)
+            \item  \(f=0,02122[m/s]\)
+      \end{itemize}
+\end{solution}

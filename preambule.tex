@@ -1,0 +1,121 @@
+%importation des packages
+\documentclass[fontsize=11pt,twoside=true,DIV=calc,parskip=half]{scrbook}
+\usepackage{scrlayer-scrpage} %équivalent de fancyhdr pour kommascript
+\usepackage[french]{babel}
+\usepackage[autostyle]{csquotes} % csquotes va utiliser la langue définie dans babel
+\usepackage[shortlabels]{enumitem} %permet de faire \begin{enumerate}[a)]
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tabularx}
+\usepackage{amsmath} %formules mathématiques
+\usepackage{amssymb} %symboles mathématiques
+\usepackage{amsfonts} %polices mathématiques
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{multido}%pour la macro pointillés
+\usepackage{siunitx}
+\usepackage{svg}
+\svgpath{{./images}} % <- using \svgpath to avoid warning
+
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins,listings}
+\newtcbtheorem[number within=section]{mytheo}{}%
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}
+%\tcbset{myformula/.style={colback=yellow!10!white,colframe=red!50!black,
+%      every box/.style={highlight math style={colback=LightBlue!50!white,colframe=Navy}}
+%    }}
+%\tcbset{colback=yellow!10!white, colframe=red!50!black, highlight math style= {enhanced,colframe=red,colback=red!10!white,boxsep=0pt}}
+
+
+
+
+
+
+%hyperliens
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
+}
+
+
+%police
+%\usepackage{libertine} %la police
+\usepackage[T1]{fontenc}
+
+%couleurs
+\definecolor{LightBlue}{HTML}{ADD8E6}
+
+%cadre
+\usepackage{framed}
+
+%graphique tikz
+\usepackage{tkz-fct}
+\usepackage{tkz-euclide}
+
+
+%chemin vers les images
+\graphicspath{ {./images/} }
+
+%exercices xsim
+\usepackage[use-files]{xsim}
+\DeclareExerciseTagging{difficulty}
+\xsimsetup{
+  path=xsim,
+  load-style = layouts ,
+  exercise/template = runin ,
+  %solution/template = runin,
+  difficulty={*,**,***},
+}
+
+
+
+%math
+\everymath{\displaystyle} %pour que les équations soient bien présentées
+
+
+%les variables du document
+\subject{Physique(2h)}
+\title{\Huge{Mouvement circulaire uniforme}}
+\subtitle{5\textsuperscript{ème} GT}
+\author {J.N. Gautier}
+\date{}
+
+
+
+%mise en page générale
+\KOMAoptions{DIV=last}
+\usepackage{setspace}%pour regler l'interligne
+\onehalfspacing %interligne1.5
+\setlength{\parindent}{0pt} %pas de retrait en début de paragraphe
+%\setlength{\parskip}{13pt}
+\usepackage{caption}%mise en forme des légendes des figures
+\addtokomafont{caption}{\scriptsize \itshape}
+\addtokomafont{captionlabel}{\scriptsize \itshape}
+
+%pieds de page utiliser scrlayer-scrpage
+\setkomafont{pageheadfoot}{\small}
+\lohead{} \rohead{} \cohead{}
+\lofoot{MCU - physique(1h) - 5GT}
+\rofoot{Page \thepage}
+\cofoot{}
+
+
+%style perso et macro
+\newcommand{\motcle}[1]{
+  \uppercase{\textbf{#1}}
+}
+
+\newcommand{\pointilles}[1]{
+  \begin{itemize}[label={}]
+    \multido{}{#1}{\item \dotfill}
+  \end{itemize}
+}
+
+%\newenvironment{encadre}{\begin{center}\begin{minipage}[c]{0.8\linewidth}\begin{tcolorbox}}{\end{tcolorbox}\end{minipage}\end{center}}
+\newenvironment{encadre}{\begin{center}\begin{minipage}[c]{0.8\linewidth}\begin{tcolorbox}[colframe=red!50!yellow,colback=red!5!white]}{\end{tcolorbox}\end{minipage}\end{center}}
+
+

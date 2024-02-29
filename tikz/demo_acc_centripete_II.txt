@@ -1,0 +1,42 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{wwffqq}{rgb}{0.4,1,0}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{ttffqq}{rgb}{0.2,1,0}
+\definecolor{ffxfqq}{rgb}{1,0.4980392156862745,0}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqzzqq}{rgb}{0,0.6,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-7.7,-5.4) rectangle (14.94,13.96);
+\fill[line width=0pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (4.629422378491702,7.950168030534125) -- (3.1449065223887356,10.557122704666163) -- (1.6667963555911083,8.422234814402902) -- cycle;
+\fill[line width=0pt,color=wwffqq,fill=wwffqq,fill opacity=0.1] (4,4) -- (4.629422378491702,7.950168030534125) -- (7.475939565509384,5.979354474803954) -- cycle;
+\draw [line width=2pt,color=qqqqff] (4,4) circle (4cm);
+\draw [line width=2pt,color=qqzzqq] (4,4)-- (7.475939565509384,5.979354474803954);
+\draw [line width=2pt,color=qqzzqq] (4,4)-- (4.629422378491702,7.950168030534125);
+\draw [->,line width=2pt,color=ffqqqq] (7.475939565509384,5.979354474803954) -- (5.991423709406417,8.586309148935992);
+\draw [->,line width=2pt,color=ffqqqq] (4.629422378491702,7.950168030534125) -- (1.6667963555911083,8.422234814402902);
+\draw [->,line width=2pt,dash pattern=on 1pt off 1pt,color=ffqqqq] (4.629422378491702,7.950168030534125) -- (3.1449065223887356,10.557122704666163);
+\draw [->,line width=2pt,color=ffxfqq] (3.1449065223887356,10.557122704666163) -- (1.6667963555911083,8.422234814402902);
+\draw [line width=2pt,color=ttffqq] (7.475939565509384,5.979354474803954)-- (4.629422378491702,7.950168030534125);
+\begin{scriptsize}
+\draw [fill=black] (4,4) circle (2.5pt);
+\draw[color=black] (4.38,3.91) node {C};
+\draw [fill=black] (7.475939565509384,5.979354474803954) circle (2.5pt);
+\draw[color=black] (7.84,6.17) node {$$x_1$$};
+\draw [fill=black] (4.629422378491702,7.950168030534125) circle (2.5pt);
+\draw[color=black] (5.02,8.25) node {$$x_2$$};
+\draw[color=qqzzqq] (5.96,4.95) node {r};
+\draw[color=qqzzqq] (4.7,6.17) node {r};
+\draw[color=ffqqqq] (7.34,7.55) node {$$\vec{v_1}$$};
+\draw[color=ffqqqq] (2.76,7.95) node {$$\vec{v_2}$$};
+\draw[color=ffqqqq] (4.5,9.51) node {$$\vec{v_1}$$};
+\draw[color=ffxfqq] (3.64,9.93) node {$$\vec{\Delta v = \vec{v_2} - \vec{v_1}}$$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

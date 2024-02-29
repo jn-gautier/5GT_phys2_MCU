@@ -1,0 +1,93 @@
+\chapter{Force centripète}
+Nous avons vu dans le chapitre sur les lois de newton qu'une accélération est le produit d'une force s'exerçant sur une masse. L'accélération centripète du MCU n'échappe pas à cette loi.
+Il n'est pas toujouurs nécessaire de connaitre la nature de cette force, il peut s'agir d'une force magnétique, de l'attraction d'une planète, d'une traction, de frottements, d'une partie du poids, ....
+
+Dans la relation \(a=\frac{F}{m}\), la masse n'est pas un vecteur. Cela implique que les vecteurs \(\vec{a}\) et \(\vec{F}\) ont toujours le même sens et la même direction. On en déduit naturellement que la force qui produit un MCU est toujours une \motcle{force centripète}.
+la valeur de la force centripète est naturellement donnée par :
+\begin{mytheo*}{Force centripète}
+    \begin{equation}
+        F_c=\frac{m \cdot v^2}{r}
+    \end{equation}
+\end{mytheo*}
+\newpage
+
+\section{Virage relevé}
+Dans les applications du MCU qui ont été abordées, une voiture dans un virage est un exemple fréquemment rencontré. Jusqu'à présent, nous avons considéré que les forces centripètes permettant à une voiture de tourner étaient les frottements entre les roues et le sol. Toutefois, ceux-ci ne sont pas toujours suffisants : les voitures peuvent circuler à une vitesse importante, à la sortie d'une autoroute, par exemple. Les frottements peuvent aussi être fortement diminués à cause de la pluie ou de la neige.
+
+Il est toutefois possible de créer une force centripète qui provient du poids du véhicule, cela nécessite que le virage soit incliné, on parle alors de \motcle{virage relevé}.
+
+\begin{figure}[h]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8 \linewidth]{virage_relevé.jpg}
+        \caption{Un exemple de virage relevé.}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8 \linewidth]{virage_relevé_II.jpg}
+        \caption{Un autre exemple de virage relevé.}
+    \end{minipage}
+\end{figure}
+
+\begin{tcolorbox}[title={Réalise, ci-dessous, un schéma \enquote{vue de haut} et \enquote{vue en coupe} des forces agissant sur une voiture dans un virage relevé.},sidebyside,height=6cm]
+
+    \tcblower
+
+\end{tcolorbox}
+
+\newpage
+
+Dans cette situation, les deux seules forces qui s'exercent verticalement sont le poids du véhicule et la composante en Y de la force normale. Donc :
+\begin{equation}
+    m \cdot g = F_N \cdot cos(\theta)
+    \label{eqn:bilan_vertical}
+\end{equation}
+
+On sait aussi que la force centripète correspond à la composante horizontale de la force normale. Donc :
+\begin{equation}
+    \frac{m \cdot v^2}{r} = F_N \cdot sin(\theta)
+    \label{eqn:bilan_horizontal}
+\end{equation}
+
+Si on associe les équations \ref{eqn:bilan_vertical} et \ref{eqn:bilan_horizontal}, on peut écrire que :
+\begin{equation}
+    \frac{m \cdot v^2}{r \cdot sin(\theta)} = \frac{m \cdot g}{cos(\theta)}
+\end{equation}
+On peut réarranger cette équation pour obtenir la vitesse maximale avec laquelle le virage peut être emprunté :
+\begin{mytheo*}{Vitesse maximale dans un virage relevé}
+    \begin{equation}
+        v=\sqrt{r \cdot g \cdot tan \theta}
+    \end{equation}
+\end{mytheo*}
+On remarquera que cette vitesse ne dépend pas de la masse du véhicule.
+
+\newpage
+
+\section{Exercices}
+%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}%1
+    Quelle est la vitesse maximale avec laquelle une voiture de 300[kg] peut aborder un virage relevé de \(10^{\circ}\) si le rayon de courbure de celui-ci est de 25[m]?
+\end{exercise}
+\begin{solution}%1
+    \(v=6,5760[m/s]\)
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}
+    À la sortie d'une autoroute, on souhaite que les voitures puissent prendre un virage en roulant à du 80[km/h]. Si la longueur totale du virage est de 100[m] et qu'il permet de faire un 1/4 de tour, quel est son angle de relèvement ?
+\end{exercise}
+\begin{solution}
+    \(\theta=38,334 ^{\circ}\)
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}
+    Une masse \(m=0,2[kg]\) est attachée au bout d’une corde de longueur \(L=0,7[m]\). On fait tourner la masse à une vitesse de \(v=6m/s\).
+    \begin{enumerate}[a]
+        \item Quel est l’angle formé par la corde par rapport à sa position de repos verticale.
+        \item Quelle est la tension dans la corde à ce moment, la somme de \(T_X\) et \(T_Y\)?
+    \end{enumerate}
+\end{exercise}
+\begin{solution}
+
+\end{solution}
